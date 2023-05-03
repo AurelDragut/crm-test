@@ -1,0 +1,5 @@
+stof_doctrine_extensions:
+    default_locale: de_DE
+    orm:
+        default:
+            sluggable: true

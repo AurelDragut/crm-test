@@ -1,0 +1,108 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Startseite{% endblock %}
+
+{% block body %}
+<!-- banner start-->
+<div class="banner">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item item-1">
+                <div class="container">
+                    <div class="banner-slider-inner-1">
+                        <h2>Retouren- /  Widerruf- und Reklamationsabwicklung</h2>
+                        <h3>Sie wollen ihr Batterie reklamieren?</h3>
+                        <h4>SIGA, Winner, WINTER, NRG, SOLIS, BSA, Langzeit, Loadchamp, Banner, Tokohama, SHELL</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="item item-2 active">
+                <div class="container">
+                    <div class="banner-slider-inner-1">
+                        <h2>Retouren- /  Widerruf- und Reklamationsabwicklung</h2>
+                        <h3>Sie haben die falsche Batterie erhalten von</h3>
+                        <h4>SIGA, Winner, WINTER, NRG, SOLIS, BSA, Langzeit, Loadchamp, Banner, Tokohama, SHELL</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="slider-mover-left" aria-hidden="true">
+             <img src="/images/png/left-chevron.png" alt="left-chevron">
+          </span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="slider-mover-right" aria-hidden="true">
+                <img src="/images/png/right-chevron.png" alt="right-chevron">
+            </span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+<!-- banner end-->
+
+<!-- Recent car start-->
+<div class="recent-car content-area">
+    <div class="container">
+        <div class="recent-car-content">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="section-heading">
+                        <i class="fa fa-car"></i>
+                        <h2>Batterie Reklamation</h2>
+                        <div class="border"></div>
+                        <h4>folgender Hersteller</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <h1>Neue Anfrage</h1>
+                <div class="row control-group well well-small well_top flex">
+                    <div class="col-md-2">{{ form_label(form.re_nr, 'Rechnungsnummer') }}</div>
+                    <div class="col-md-4">{{ form_widget(form.re_nr) }}</div>
+                    <div class="col-md-2">{{ form_label(form.Postleitzahl, 'PLZ') }}</div>
+                    <div class="col-md-2">{{ form_widget(form.Postleitzahl) }}</div>
+                    <div class="col-md-2">{{ form_widget(form.Pruefen) }}</div>
+                </div>
+                {{ form_start(form, {'action': path('neu_anfrage'), 'method': 'POST', 'attr': {'novalidate': 'novalidate', 'enctype': 'multipart/form-data'}}) }}
+                <div id="kunden"></div>
+                {{ form_end(form) }}
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h1>Retouren- /  Widerruf- / Garantie- und Reklamationsabwicklung</h1>
+                    <h3>SIGA, Winner, WINTER, NRG, SOLIS, BSA, Langzeit, Loadchamp, Banner, Tokohama, SHELL</h3>
+                    <p>Sie haben ein Anliegen der folgenden Hersteller: SIGA, Winner, WINTER, NRG, SOLIS, BSA, Langzeit, Loadchamp, Tokohama dann sind Sie bei uns richtig.</p>
+                    <p>Über das einfache und unkomplizierte System können Retouren und Rücksendungen ganz einfach abgewickelt werden. Der Vorteil für Sie als Kunde besteht darin, dass Sie jederzeit über den Status Ihrer Batterie informiert werden. Somit brauchen Sie sich um nichts zu kümmern. Wir haben alle nötigen Informationen direkt zur Hand und können Ihre Reklamation bzw. Beschwerde so noch schneller bearbeiten.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h1>Händler</h1>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><img src="/images/handler/Battspez.png" alt="Batteriespezialist.de"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><img src="/images/handler/Auto24.png" alt="Autobatterien24.com"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><img src="/images/handler/winner.png" alt="winnerbatterien.de"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><img src="/images/handler/versorgung.png" alt="versorgungsbatterie.de"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><img src="/images/handler/solar.png" alt="solarbatterie.com"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><img src="/images/handler/BSA.png" alt="BSA"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><img src="/images/handler/langzeit.png" alt="Langzeit.de"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><img src="/images/handler/Loadchamp.png" alt="Loadchamp.de"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><img src="/images/handler/NRG.png" alt="NRG"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><img src="/images/handler/Solis.png" alt="SOLIS"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><img src="/images/handler/Tokohama.png" alt="TOKOHAMA"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><img src="/images/handler/SIGA.png" alt="SIGA-Batterien.de"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><img src="/images/handler/Winter.png" alt="WINTER"></div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12"><img src="/images/handler/MBS.png" alt="MBS"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%  endblock %}

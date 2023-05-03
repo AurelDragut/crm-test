@@ -1,0 +1,5 @@
+Admin-Benutzer: admin
+Admin-Passwort: dk6FexYjGOEF
+
+Sync-Benutzer: sync
+Sync-Passwort: ThGsf8nORprz

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="icon"
+          href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+    {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+    <link rel="stylesheet" href="/css/animate.min.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="/css/login.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="stylesheet" href="/css/slider.css"/>
+</head>
+<body>
+<div class="main-header">
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand-logo" href="{{ path('app_homepage') }}">
+                    <img src="{{ asset('/images/logo.png') }}" alt="Batterie-Reklamation">
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ path('app_homepage') }}" class="active">Home</a></li>
+
+                    <li><a href="{{ path('anfrage_pruefen') }}">Reklamation/Widerruf</a></li>
+
+                    <li><a href="{{ path('impressum') }}">Impressum</a></li>
+                    <li><a href="{{ path('admin') }}">Mein Konto</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+            <!-- /.container -->
+        </nav>
+    </div>
+</div>
+{% block body %}{% endblock %}
+<footer class="main-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 footer-item">
+                <div class="footer-item-content">
+                    <a href="{{ path('app_homepage') }}">
+                        <img src="{{ asset('/images/footer-logo.png') }}" alt="logo">
+                    </a>
+                    <p>Batterie Reklamation<br>
+                        Ein Unternehmen der SIGA Batteries GmbH</p>
+                    <ul>
+                        <li>
+                            <a href="https://goo.gl/maps/v6m4CaJLaj4za85E7" target="_blank">
+                                <i class="fa fa-map-marker"></i>
+                                Casterfeldstr. 66-72, 68199 Mannheim
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {% for menu in menu %}
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 footer-item">
+                    <h3>{{ menu.Titel }}</h3>
+                    <ul>
+                    {% for MenuePunkt in menu.MenuePunkte %}
+                    <li><a href="{{ MenuePunkt.Seite.Schnecke }}">{{ MenuePunkt }}</a></li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            {%  endfor %}
+        </div>
+    </div>
+</footer>
+<div class="sub-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <p>©  2018 Batterie-Reklamation</p>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <p>WEEE-Reg.-Nr. DE 61980398</p>
+            </div>
+            <div class="col-md-4 col-sm-4 hidden-xs ">
+                <ul>
+
+                    <li>
+                        <a href="{{ path('anfrage_pruefen') }}">Reklamation</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('impressum')}}">Impressum</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('app_homepage')}}">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% block footer_javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}
+<!-- Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
+<script type="text/javascript" src="//www.freeprivacypolicy.com/public/cookie-consent/4.0.0/cookie-consent.js" charset="UTF-8"></script>
+<script type="text/javascript" charset="UTF-8" nonce="EDNnf03nceIOfn39fn3e9h3sdfa">
+    document.addEventListener('DOMContentLoaded', function () {
+        cookieconsent.run({"notice_banner_type":"interstitial","consent_type":"express","palette":"light","language":"de","page_load_consent_levels":["strictly-necessary"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_name":"Batterie Reklamation"});
+    });
+</script>
+
+<noscript>Cookie Consent by <a href="https://www.freeprivacypolicy.com/" rel="noopener">Free Privacy Policy Generator</a></noscript>
+<!-- End Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
+
+
+
+
+
+<!-- Below is the link that users can use to open Preferences Center to change their preferences. Do not modify the ID parameter. Place it where appropriate, style it as needed. -->
+
+<a href="#" id="open_preferences_center">Update cookies preferences</a>
+</body>
+</html>

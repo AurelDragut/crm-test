@@ -1,0 +1,31 @@
+{
+    "devDependencies": {
+        "@hotwired/stimulus": "^3.0.0",
+        "@hotwired/turbo": "^7.0.1",
+        "@symfony/stimulus-bridge": "^3.0.0",
+        "@symfony/ux-turbo": "file:vendor/symfony/ux-turbo/assets",
+        "@symfony/webpack-encore": "^3.0.0",
+        "core-js": "^3.0.0",
+        "jquery": "^3.6.0",
+        "regenerator-runtime": "^0.13.2",
+        "webpack-notifier": "^1.6.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    },
+    "dependencies": {
+        "@fortawesome/fontawesome-free": "6.1.2",
+        "@popperjs/core": "^2.11.5",
+        "bootstrap": "^4.6.2",
+        "bootstrap-collapse": "^0.0.25",
+        "bootstrap-slider": "^11.0.2",
+        "popper.js": "^1.14.3",
+        "synology-chat-bot": "^0.1.0",
+        "yarn": "^1.22.19"
+    }
+}

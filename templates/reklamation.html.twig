@@ -1,0 +1,53 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/base.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap-responsive.min.css') }}">
+{% endblock %}
+
+{% block title %}Reklamation{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+
+            <a href="{{ path('anfrage_pruefen') }}" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+
+                <div class="well">
+                    <div class="row-fluid">
+                        <div class="span1 text-center"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></div>
+                        <div class="span11"><h2>Neuer Auftrag</h2>Wenn Sie ein Problem mit einer gelieferten Ware
+                            haben und einen neuen Reklamationsfall melden möchten, klicken Sie hier. Sie erhalten
+                            dann eine RMA-Nummer.
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a href="status.php?lang=de" class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="well">
+                    <div class="row-fluid">
+                        <div class="span1 text-center"><i class="fa fa-search fa-2x" aria-hidden="true"></i></div>
+                        <div class="span11"><h2>Statusabfrage</h2>Wenn Sie bereits ein Problem mit einer gelieferten
+                            Ware gemeldet haben und Ihnen Ihre RMA-Nummer vorliegt, klicken Sie hier, um den Status
+                            der Reklamation ein zu sehen.
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                {% for frage in fragen %}
+                    <div class="well question  dropdown-toggle well-small">
+                        <span class="caret" style="margin-right: 5px;"></span><b>{{ frage.Frage }}</b></div>
+                    <div class="alert alert-success answer marginleftanswer" style="display: none;">{{ frage.Antwort|raw }}
+                    </div>
+                {%  endfor %}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

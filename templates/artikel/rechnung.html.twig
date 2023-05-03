@@ -1,0 +1,13 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{# @var field \EasyCorp\Bundle\EasyAdminBundle\Dto\FieldDto #}
+{# @var entity \EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto #}
+{# this is a bit ugly, but Twig doesn't have a 'is numeric' test #}
+{% if field.formattedValue matches '/^\\d+$/' %}
+    <span class="badge badge-secondary">{{ field.formattedValue }}</span>
+{% else %}
+    <div class="row">
+        {% for item in field.value.snapshot %}
+            <div class="col-md-2"><a href="/admin?crudAction=detail&crudControllerFqcn=App\Controller\Admin\RechnungCrudController&entityId={{item.Rechnung.Rechnungsnummer}}&menuIndex=8&referrer=?crudAction%3Dindex%26crudControllerFqcn%3DApp%255CController%255CAdmin%255CRechnungCrudController%26menuIndex%3D8%26submenuIndex%3D-1&submenuIndex=-1">{{ item.Rechnung.Rechnungsnummer }}</a></div>
+        {% endfor %}
+    </div>
+{% endif %}

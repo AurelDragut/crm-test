@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+{% block title %}Neue Anfrage{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+        <h1>Neue Anfrage</h1>
+        <div class="row control-group well well-small well_top flex">
+            <div class="col-md-2">{{ form_label(form.re_nr, 'Rechnungsnummer') }}</div>
+            <div class="col-md-4">{{ form_widget(form.re_nr) }}</div>
+            <div class="col-md-2">{{ form_label(form.Postleitzahl, 'PLZ') }}</div>
+            <div class="col-md-2">{{ form_widget(form.Postleitzahl) }}</div>
+            <div class="col-md-2">{{ form_widget(form.Pruefen) }}</div>
+        </div>
+        {% if errors %}
+            <div class="row">
+            <div class="alert alert-danger" id="error-messages">
+                <ul>
+        {% for error in errors %}
+                    <li><strong>{{ error.propertyPath|replace({'children[': '', '].data': ''}) }}: </strong>{{ error.message }}</li>
+        {% endfor %}
+                </ul>
+            </div>
+            </div>
+        {% endif %}
+
+        {{ form_start(form, {'action': path('neu_anfrage'), 'method': 'POST', 'attr': {'id':'anfrageForm', 'novalidate': 'novalidate', 'enctype': 'multipart/form-data'}}) }}
+        <input type="hidden" name="token" value="{{ csrf_token('kunden-item') }}"/>
+        <div id="kunden"><div id="errors"></div></div>
+        {{ form_end(form) }}
+    </div>
+</div>
+{% endblock %}
+
+{% block footer_javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends '@!EasyAdmin/layout.html.twig' %}
+
+{% block title %}User Profile{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-3">
+                <p>
+                    <img src="{{ asset(app.user.avatarUrl) }}" alt="" width="300px">
+                </p>
+                {% for role in app.user.roles %}
+                    {% if role != 'ROLE_USER' %}
+                        <p>
+                            <span class="fa fa-star"></span>
+                            <i>{{ role }}</i>
+                        </p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="col-9">
+                <h3>{{ app.user.Name }}</h3>
+                <p>Email: {{ app.user.email }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

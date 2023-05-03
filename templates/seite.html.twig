@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block title %}{{ seite.Titel }}{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+
+        {% if seite.Titel != 'Startseite' %}
+            <h1>{{ seite.Titel }}</h1>
+        {% endif %}
+
+        {{ seite.Inhalt|raw }}
+    </div>
+{% endblock %}
+
+{% block footer_javascripts %}
+    {{ encore_entry_script_tags('app') }}
+{% endblock %}

@@ -1,0 +1,10 @@
+easy_admin:
+  entities:
+    WarenEingang:
+      # ...
+      list:
+        fields:
+          - { property: 'RechnungsDatei', template: 'rechnung.html.twig' }
+      form:
+        fields:
+          - { property: 'imageFile', type: 'vich_file' }

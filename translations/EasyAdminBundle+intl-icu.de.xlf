@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="de" target-language="de" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="r2IGHZo" resname="user.logged_in_as">
+        <source>user.logged_in_as</source>
+        <target>Angemeldet als</target>
+      </trans-unit>
+      <trans-unit id="xxVfXla" resname="user.anonymous">
+        <source>user.anonymous</source>
+        <target>Anonym</target>
+      </trans-unit>
+      <trans-unit id="fo5zm0W" resname="settings.appearance.label">
+        <source>settings.appearance.label</source>
+        <target>Aussehen</target>
+      </trans-unit>
+      <trans-unit id="XO6ZF5U" resname="settings.appearance.light">
+        <source>settings.appearance.light</source>
+        <target>Licht</target>
+      </trans-unit>
+      <trans-unit id="Ivt7UdC" resname="settings.appearance.dark">
+        <source>settings.appearance.dark</source>
+        <target>Dunkel</target>
+      </trans-unit>
+      <trans-unit id="hb.ELLw" resname="settings.appearance.auto">
+        <source>settings.appearance.auto</source>
+        <target>Automatisch</target>
+      </trans-unit>
+      <trans-unit id="odDw0du" resname="action.search">
+        <source>action.search</source>
+        <target>Suchen</target>
+      </trans-unit>
+      <trans-unit id="vMRdZZB" resname="label.nullable_field">
+        <source>label.nullable_field</source>
+        <target>Leer lasen</target>
+      </trans-unit>
+      <trans-unit id="flAoA9y" resname="autocomplete.no-results-found">
+        <source>autocomplete.no-results-found</source>
+        <target>keine Ergebnisse gefunden</target>
+      </trans-unit>
+      <trans-unit id="MLS2ZRD" resname="autocomplete.no-more-results">
+        <source>autocomplete.no-more-results</source>
+        <target>keine Ergebnisse mehr</target>
+      </trans-unit>
+      <trans-unit id="hCDMpjH" resname="autocomplete.loading-more-results">
+        <source>autocomplete.loading-more-results</source>
+        <target>mehr Ergebnisse laden</target>
+      </trans-unit>
+      <trans-unit id="dhADgSE" resname="action.add_new_item">
+        <source>action.add_new_item</source>
+        <target>Neu hinzufügen</target>
+      </trans-unit>
+      <trans-unit id="47Pt8HL" resname="action.remove_item">
+        <source>action.remove_item</source>
+        <target>Entfernen</target>
+      </trans-unit>
+      <trans-unit id="cKnorcr" resname="action.choose_file">
+        <source>action.choose_file</source>
+        <target>Datei auswählen</target>
+      </trans-unit>
+      <trans-unit id="5nxOeVi" resname="form.tab.error_badge_title">
+        <source>form.tab.error_badge_title</source>
+        <target>Ein ungültiges Feld|%count% ungültige Felder</target>
+      </trans-unit>
+      <trans-unit id="PX2zfQj" resname="files">
+        <source>files</source>
+        <target>Dateien</target>
+      </trans-unit>
+      <trans-unit id="Rd0n9wc" resname="filter.title">
+        <source>filter.title</source>
+        <target>Filter</target>
+      </trans-unit>
+      <trans-unit id="EThXKJ7" resname="action.entity_actions">
+        <source>action.entity_actions</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="oZzSf3Q" resname="datagrid.hidden_results">
+        <source>datagrid.hidden_results</source>
+        <target>Einige Ergebnisse können nicht angezeigt werden, weil Sie nicht über ausreichende Rechte verfügen</target>
+      </trans-unit>
+      <trans-unit id=".Mt52Jq" resname="datagrid.no_results">
+        <source>datagrid.no_results</source>
+        <target>Keine Ergebnisse</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

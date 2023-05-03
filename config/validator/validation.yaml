@@ -1,0 +1,8 @@
+App\Entity\Artikel:
+  properties:
+    Bezeichnung:
+      - NotBlank: ~
+      - Length:
+          min: 3
+    Menge:
+      - Positive: ~

@@ -1,0 +1,39 @@
+{% for artikel in Artikel %}
+<div class="extraArticle">
+    <div class="row control-group well well-small well_top" id="produkt-{{ loop.index }}">
+        <label class="control-label col-md-2">Produkt:</label>
+        <div class="controls col-md-9">
+            Artikelname: <strong>{{ artikel.bezeichnung }}</strong>
+            Menge:
+            <select name="Menge[]">
+                {% for Anzahl in 1..artikel.Menge %}
+                    <option value="{{Anzahl}}">{{Anzahl}}</option>
+                {% endfor %}
+            </select> von {{artikel.Menge}}
+            <input type="hidden" name="produkt[]" value="{{ artikel.bezeichnung }}">
+        </div>
+        <div id="del0" class="col-md-1"><div class="delete" style="float: right"><button type="button" class="btn btn-danger btn-lg" onclick="document.getElementById('produkt-{{ loop.index }}').remove();">X</button></div></div>
+
+        <label class="control-label col-md-2">Grund</label>
+        <div class="controls col-md-9">
+            <select id="reason" class="reason" name="grund[]">
+                <option value="">auswählen</option>
+                {% for Grund in Gruende %}
+                <option value="{{ Grund.id }}">{{ Grund.Inhalt }}</option>
+                {%  endfor %}
+            </select>
+        </div>
+        {#<div class="reason_infobox controls"></div>
+        <script type="text/javascript">
+            $(".reason").closest('.controls').change(function() {
+                $(this).next(".reason_infobox").load("reason.php?lang=de&reasonx=" + $(this).closest('.controls').find('.reason').val());
+            });
+        </script>#}
+        <label class="control-label col-md-2">Beschreibung</label>
+        <div class="controls col-md-10">
+            <textarea id="description" name="beschreibung[]" class="form-control" title="Diese Angabe ist Pflicht."></textarea>
+        </div>
+    </div>
+
+</div>
+{% endfor %}
